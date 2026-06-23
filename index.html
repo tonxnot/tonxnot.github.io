@@ -1,0 +1,297 @@
+9<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TONX2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* FUTURISTIC LINE BACKGROUND */
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    background:#050816;
+    overflow:hidden;
+}
+
+/* moving grid lines */
+.background::before,
+.background::after{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background-image:
+        linear-gradient(rgba(0,212,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(123,44,255,.08) 1px, transparent 1px);
+    background-size:60px 60px;
+    animation:moveGrid 20s linear infinite;
+    transform:rotate(10deg);
+}
+
+.background::after{
+    opacity:.4;
+    filter:blur(1px);
+    animation-duration:35s;
+}
+
+@keyframes moveGrid{
+    from{
+        transform:translate(0,0) rotate(10deg);
+    }
+    to{
+        transform:translate(-200px,-200px) rotate(10deg);
+    }
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.logo{
+    font-size:5rem;
+    font-weight:700;
+    background:linear-gradient(90deg,#00d4ff,#7b2cff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:25px;
+}
+
+.tagline{
+    font-size:1.15rem;
+    line-height:1.9;
+    color:#d8d8d8;
+    min-height:140px;
+}
+
+/* CARDS */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding-bottom:80px;
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(18px);
+    border-radius:28px;
+    padding:35px;
+    margin-bottom:30px;
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 50px rgba(0,0,0,.3);
+}
+
+h2{
+    color:#00d4ff;
+    margin-bottom:15px;
+}
+
+p{
+    color:#d6d6d6;
+    line-height:1.9;
+}
+
+/* SCROLL ANIMATION (REPEATABLE) */
+
+.hidden{
+    opacity:0;
+    transform:translateY(60px) scale(.98);
+    transition:all 0.8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+/* BUTTON */
+
+.contact{
+    text-align:center;
+    margin-top:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    background:linear-gradient(135deg,#00d4ff,#7b2cff);
+    transition:.4s;
+    box-shadow:0 10px 30px rgba(0,212,255,.3);
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#8f95a3;
+    font-size:.9rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.logo{
+    font-size:3rem;
+}
+
+.tagline{
+    font-size:1rem;
+}
+
+.card{
+    padding:25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="logo">TONX2026</h1>
+        <p class="tagline">
+            <span id="typing"></span>
+        </p>
+    </div>
+</section>
+
+<div class="container">
+
+    <section class="hidden">
+        <div class="card">
+            <h2>Mission</h2>
+            <p>
+                To explore, learn, and contribute to the future of cryptocurrency, blockchain technology, and decentralized finance that empowers people around the world through innovation and transparency.
+            </p>
+        </div>
+    </section>
+
+    <section class="hidden">
+        <div class="card">
+            <h2>Vision</h2>
+            <p>
+                To support a future where digital assets and blockchain technology create greater financial freedom, global accessibility, and new opportunities for everyone.
+            </p>
+        </div>
+    </section>
+
+    <section class="hidden">
+        <div class="card">
+            <h2>About Me</h2>
+            <p>
+                Welcome to TONX2026. I am passionate about technology, digital innovation, blockchain ecosystems, and the future of cryptocurrency.
+                This website is a personal digital space where I share ideas, visions, inspiration, and optimism about the next generation of financial technology.
+            </p>
+        </div>
+    </section>
+
+    <section class="hidden">
+        <div class="card">
+            <h2>Contact</h2>
+            <p>Feel free to reach out for collaboration, discussion, networking, or simply to say hello.</p>
+
+            <div class="contact">
+                <a href="https://wa.me/628567645605" target="_blank" class="btn">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 TONX-CRYPTOIZ • All Rights Reserved
+</footer>
+
+<script>
+
+/* Typing Animation */
+const text =
+`"Everything in our lives unfolds for our highest good. Each day, our lives are filled with blessings, ease, and happiness. We gratefully welcome and receive all the goodness that comes into our lives." ✨`;
+
+let i = 0;
+
+function typing(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing,25);
+    }
+}
+typing();
+
+/* SCROLL ANIMATION (REPEAT ON SCROLL UP/DOWN) */
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show"); 
+        }
+    });
+},{ threshold: 0.15 });
+
+document.querySelectorAll(".hidden").forEach(el=>{
+    observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
